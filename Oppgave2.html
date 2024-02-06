@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <title>Fartskontroll</title>
+    
+</head>
+
+<body>
+    <h1>Fartskontroll</h1>
+    <label for="fart">Oppgi fart:</label>
+    <input type="number" id="fart" placeholder="85">
+    <button onclick="registrerFart()">Registrer</button>
+
+    <p>Melding: <span id="melding"></span></p>
+    <p>Avvik: <span id="avvik"></span></p>
+
+    <script>
+        let antallBiler = 0, totalFart = 0, antallLovlige = 0, antallUlovlige = 0;
+
+        function registrerFart() {
+            const fartsgrense = 80;
+            const fartInput = document.getElementById('fart');
+            const fart = parseInt(fartInput.value);
+            let melding = '';
+            let avvik = 0;
+
+            if (fart > fartsgrense) {
+                antallUlovlige++;
+                avvik = fart - fartsgrense;
+                melding = fart > 90 ? '3000 kr i bot' : '1500 kr i bot';
+            } else {
+                antallLovlige++;
+                melding = 'Lovlig fart';
+            }
+
+            antallBiler++;
+            totalFart += fart;
+
+            document.getElementById('melding').textContent = melding;
+            document.getElementById('avvik').textContent = avvik > 0 ? avvik : '';
+        }
+    </script>
+</body>
+</html>

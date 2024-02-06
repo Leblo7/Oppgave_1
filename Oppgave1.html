@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Test</title>
+</head>
+<body>
+    <script>
+
+    let fart1 = 75; 
+    let fart2 = 85; 
+
+   let ledetekst = "Gjennomsnittsfarten er ";
+   let gjennomsnittsfart = (fart1 + fart2) / 2;
+   alert(ledetekst + gjennomsnittsfart); 
+
+   let fartsgrense = 80; 
+   if (fart1 > fartsgrense && fart1 <= 90) {
+       alert("Løvlig fart"); 
+   } 
+   else if (fart1 > 90) {
+       alert("3000kr i bot"); 
+   }
+
+   if (fart1 <= fartsgrense) {
+       alert("Farten er OK");
+   } 
+   else {
+       alert("Farten er ikke OK");
+   }
+    </script>
+</body>
+</html>
